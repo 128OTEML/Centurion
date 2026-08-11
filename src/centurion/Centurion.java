@@ -20,8 +20,9 @@ public class Centurion extends Mod {
             Time.runTask(10f, () -> {
                 BaseDialog dialog = new BaseDialog("frog");
                 dialog.cont.add("Pls Sentinel no te chinges el mod TQ ;3").row();
+                dialog.cont.add("demasiado tarde, ya me chinge el mod").row();
                 dialog.cont.image(Core.atlas.find("calajo")).pad(20f).row();
-                dialog.cont.button("I see", dialog::hide).size(100f, 50f);
+                dialog.cont.button("ya veo", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
         });

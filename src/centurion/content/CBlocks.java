@@ -2,15 +2,18 @@ package centurion.content;
 
 import centurion.world.blocks.distribution.computer;
 import centurion.world.blocks.distribution.SafetyArm;
-import centurion.world.blocks.distribution.computer;
-import centurion.world.blocks.production.RuneAltar;
+import centurion.world.blocks.alchemy.energy.CovalentBeamNode;
+import centurion.world.blocks.alchemy.energy.CovalentCell;
+import centurion.world.blocks.alchemy.energy.CovalentNode;
+import centurion.world.blocks.alchemy.TransmutationChamber;
+import centurion.world.blocks.alchemy.TransmutationForge;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.world.Block;
 
 public class CBlocks {
 
-    public static Block runeAltar, safetyArm, computerArm;
+    public static Block runeAltar, safetyArm, computerArm, covalentNode, covalentBeamNode, covalentCell, transmutationChamber, transmutationForge;
 
     public static void load() {
 
@@ -44,6 +47,64 @@ public class CBlocks {
             armor = 1f;
             health = 300;
             rangeTiles = 6;
+        }};
+
+        covalentNode = new CovalentNode("covalent-node") {{
+            requirements(Category.power, ItemStack.with(
+                    CItems.cecilion, 20
+            ));
+            description = "Nodo de energía covalente: enlaza bloques covalentes dentro de su alcance de forma inalámbrica";
+            size = 1;
+            health = 120;
+            laserRange = 8f;
+            maxNodes = 8;
+        }};
+
+        covalentBeamNode = new CovalentBeamNode("covalent-beam-node") {{
+            requirements(Category.power, ItemStack.with(
+                    CItems.cecilion, 25
+            ));
+            description = "Nodo direccional de energía covalente: enlaza el primer bloque covalente en la dirección de colocación (gíralo con R) y dibuja un rayo hacia él";
+            size = 1;
+            health = 120;
+            range = 7;
+        }};
+
+        covalentCell = new CovalentCell("covalent-cell") {{
+            requirements(Category.power, ItemStack.with(
+                    CItems.cecilion, 30
+            ));
+            description = "Celda de energía covalente: almacena E.C. producida por las cámaras de transmutación";
+            size = 2;
+            health = 250;
+            covalentCapacity = 5000f;
+        }};
+
+        transmutationChamber = new TransmutationChamber("transmutation-chamber") {{
+            requirements(Category.power, ItemStack.with(
+                    CItems.cecilion, 50,
+                    CItems.aluminum, 30
+            ));
+            configurable = false;
+            description = "Cámara de transmutación: convierte ítems en energía covalente (E.C.)";
+            size = 2;
+            health = 400;
+            transmuteItem = CItems.bauxite;
+            transmuteTime = 45f;
+            covalentProduction = 4f;
+            powerBuffer = 1500f;
+        }};
+
+        transmutationForge = new TransmutationForge("transmutation-forge") {{
+            requirements(Category.power, ItemStack.with(
+                    CItems.cecilion, 50,
+                    CItems.aluminum, 30
+            ));
+            description = "Forja de transmutación: convierte energía covalente (E.C.) en ítems seleccionados";
+            size = 2;
+            health = 400;
+            craftTime = 30f;
+            powerCapacity = 1500f;
         }};
     }
 }

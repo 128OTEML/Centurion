@@ -10,7 +10,9 @@ public class CItems {
 
     public static CenturyItems cecilion, bauxite, aluminum,
     //Fluorite Family
-    FluoriteA;
+    FluoriteA,
+    //Obtained by transmutation forge only
+    darkMatter;
 
     public static void load() {
 
@@ -25,6 +27,7 @@ public class CItems {
             hardness = 1;
             explosiveness = 0f;
             magicCharge = 10f;
+            covalentEnergy = 100f;
         }};
 
         bauxite = new CenturyItems("bauxite", Color.valueOf("c6385a")) {{
@@ -32,6 +35,7 @@ public class CItems {
             hardness = 1;
             explosiveness = 0f;
             magicCharge = 1f;
+            covalentEnergy = 100f;
         }};
 
         aluminum = new CenturyItems("aluminum", Color.valueOf("686586")) {{
@@ -40,6 +44,7 @@ public class CItems {
             explosiveness = 0f;
             charge = 40f;
             magicCharge = 1f;
+            covalentEnergy = 100f;
         }};
 
         FluoriteA = new CenturyItems("fluorite-a", Color.valueOf("f5a0f6")) {{
@@ -48,7 +53,18 @@ public class CItems {
             explosiveness = 15f;
             charge = 0f;
             magicCharge = -20f;
+            covalentEnergy = 100f;
         }};
+
+        darkMatter = new CenturyItems("dark-matter", Color.valueOf("010126")) {{
+            cost = 2.0f;
+            hardness = 1;
+            explosiveness = 0f;
+            charge = 0f;
+            magicCharge = 0f;
+            covalentEnergy = 100000f;
+        }};
+
 
     }
 }

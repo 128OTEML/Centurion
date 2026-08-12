@@ -4,7 +4,6 @@ import centurion.world.blocks.distribution.computer;
 import centurion.world.blocks.distribution.SafetyArm;
 import centurion.world.blocks.alchemy.energy.CovalentBeamNode;
 import centurion.world.blocks.alchemy.energy.CovalentCell;
-import centurion.world.blocks.alchemy.energy.CovalentNode;
 import centurion.world.blocks.alchemy.TransmutationChamber;
 import centurion.world.blocks.alchemy.TransmutationForge;
 import mindustry.type.Category;

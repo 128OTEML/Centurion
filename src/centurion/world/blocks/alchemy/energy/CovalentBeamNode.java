@@ -83,8 +83,7 @@ public class CovalentBeamNode extends CovalentBlock {
     /** Si este bloque puede ser enlazado por el rayo. */
     public boolean linkable(Building other) {
         //los nodos omni usan su propio sistema de enlaces; no forzarlos
-        return other != null && other.block instanceof CovalentBlock cb
-            && cb.connectedCovalent && !(other.block instanceof CovalentNode);
+        return other != null && other.block instanceof CovalentBlock cb && cb.connectedCovalent;
     }
 
     /**

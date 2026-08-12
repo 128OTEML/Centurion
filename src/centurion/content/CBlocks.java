@@ -48,17 +48,6 @@ public class CBlocks {
             rangeTiles = 6;
         }};
 
-        covalentNode = new CovalentNode("covalent-node") {{
-            requirements(Category.power, ItemStack.with(
-                    CItems.cecilion, 20
-            ));
-            description = "Nodo de energía covalente: enlaza bloques covalentes dentro de su alcance de forma inalámbrica";
-            size = 1;
-            health = 120;
-            laserRange = 8f;
-            maxNodes = 8;
-        }};
-
         covalentBeamNode = new CovalentBeamNode("covalent-beam-node") {{
             requirements(Category.power, ItemStack.with(
                     CItems.cecilion, 25
